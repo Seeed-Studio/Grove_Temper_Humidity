@@ -1,0 +1,35 @@
+#######################################
+# Syntax Coloring Map TH02_dev
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+TH02_dev	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+ReadTemperature	        KEYWORD2
+ReadHumidity            KEYWORD2
+ 
+TH02_IIC_WriteCmd	KEYWORD2
+TH02_IIC_ReadReg	KEYWORD2
+TH02_IIC_ReadData	KEYWORD2
+TH02_IIC_ReadData2byte	KEYWORD2
+TH02_IIC_WriteReg	KEYWORD2
+isAvailable           KEYWORD2
+begin               KEYWORD2 
+#######################################
+# Instances (KEYWORD2)
+#######################################
+TH02 KEYWORD2
+TwoWire KEYWORD2
+ 
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+ 
