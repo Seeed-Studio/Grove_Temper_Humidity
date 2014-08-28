@@ -1,11 +1,33 @@
 /*
- * File name  : TH02_dev.cpp
- * Description: Driver for DIGITAL I2C HUMIDITY AND TEMPERATURE SENSOR
- * Author     : Oliver Wang from Seeed studio
- * Version    : V0.1
- * Create Time: 2014/04
+ * TH02_dev.cpp
+ * Driver for DIGITAL I2C HUMIDITY AND TEMPERATURE SENSOR
+ *  
+ * Copyright (c) 2014 seeed technology inc.
+ * Website    : www.seeed.cc
+ * Author     : Oliver Wang
+ * Create Time: April 2014
  * Change Log :
-*/
+ *
+ * The MIT License (MIT)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
 
 /****************************************************************************/
 /***        Include files                                                 ***/
@@ -17,7 +39,6 @@
 #ifdef SERIAL_IIC
 #endif
 
-
 TH02_dev TH02;
 /****************************************************************************/
 /***       Local Variable                                                 ***/
@@ -27,25 +48,7 @@ TH02_dev TH02;
 /****************************************************************************/
 /***       Class member Functions                                         ***/
 /****************************************************************************/
-/*
- **@ Function name: TH02_dev
- **@ Description: Constructor
- **@ Input: none
- **@ OutPut: none
- **@ Retval: none
-*/
-TH02_dev::TH02_dev()
-{
 
-}
-
-/*
- **@ Function name: begin
- **@ Description: Initialize TH02_dev
- **@ Input: none
- **@ OutPut: none
- **@ Retval: none
-*/
 void TH02_dev::begin(void)
 {
     /* Start IIC */
@@ -93,6 +96,7 @@ float TH02_dev::ReadHumidity(void)
 	
 	return humility;
 }
+
 /****************************************************************************/
 /***       Local Functions                                                ***/
 /****************************************************************************/
@@ -109,13 +113,6 @@ uint8_t TH02_dev::isAvailable()
 	}
 }
 
-/*
- **@ Function name: TH02_IIC_WriteCmd
- **@ Description:
- **@ Input:
- **@ OutPut:
- **@ Retval:
-*/
 void TH02_dev::TH02_IIC_WriteCmd(uint8_t u8Cmd)
 {		
 	/* Port to arduino */
@@ -124,13 +121,6 @@ void TH02_dev::TH02_IIC_WriteCmd(uint8_t u8Cmd)
 	Wire.endTransmission();
 }
 
-/*
- **@ Function name: TH02_IIC_ReadReg
- **@ Description:
- **@ Input:
- **@ OutPut:
- **@ Retval:  
-*/
 uint8_t TH02_dev::TH02_IIC_ReadReg(uint8_t u8Reg)
 {
     /* Port to arduino */
@@ -147,13 +137,7 @@ uint8_t TH02_dev::TH02_IIC_ReadReg(uint8_t u8Reg)
 		
 	return Temp;
 } 
-/*
- **@ Function name: TH02_IIC_WriteReg
- **@ Description:
- **@ Input:
- **@ OutPut:
- **@ Retval:
-*/
+
 void TH02_dev::TH02_IIC_WriteReg(uint8_t u8Reg,uint8_t u8Data)
 {           
 	Wire.beginTransmission(TH02_I2C_DEV_ID);	 
@@ -162,14 +146,6 @@ void TH02_dev::TH02_IIC_WriteReg(uint8_t u8Reg,uint8_t u8Data)
 	Wire.endTransmission();	 
 }
 
-
-/*
- **@ Function name: TH02_IIC_ReadData
- **@ Description:
- **@ Input:
- **@ OutPut:
- **@ Retval:
-*/
 uint16_t TH02_dev::TH02_IIC_ReadData(void)
 {                        
 	/* Port to arduino */	 
@@ -177,25 +153,6 @@ uint16_t TH02_dev::TH02_IIC_ReadData(void)
 	return Temp;
 }
 
-/*
- **@ Function name: TH02_IIC_ReadData2byte
- **@ Description:
- **@ Input:
- **@ OutPut:
- **@ Retval:
-*/
-// uint16_t TH02_dev::TH02_IIC_ReadData2byte(void)
-// {	
-	// uint16_t TempData = 0;
-	// uint16_t tmpArray[2]={0};
-	 	
-	// tmpArray[0] = (uint16_t)TH02_IIC_ReadReg(REG_DATA_H);	 
-	// tmpArray[1] = (uint16_t)TH02_IIC_ReadReg(REG_DATA_L);
- 
-	// /* MSB */
-	// TempData = tmpArray[0]<<8 | tmpArray[1]; 
-	// return TempData;
-// } 
 uint16_t TH02_dev::TH02_IIC_ReadData2byte()
 {
     uint16_t TempData = 0;
