@@ -1,4 +1,4 @@
-###Grove_barometer HP20x
+### Grove_barometer HP20x
 ------------
   This is a driver for Grove_temper_humidity_TH02(high accuracy and mini).
   DataSheet of this sensor:(http://www.hoperf.cn/upload/sensor/TH02_V1.1.pdf)
