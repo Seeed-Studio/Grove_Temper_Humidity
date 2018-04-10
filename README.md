@@ -1,24 +1,31 @@
-### Grove_barometer HP20x
+### Grove Temper Humidity TH02
 ------------
-  This is a driver for Grove_temper_humidity_TH02(high accuracy and mini).
-  DataSheet of this sensor:(http://www.hoperf.cn/upload/sensor/TH02_V1.1.pdf)
-  
+
+<img src=https://statics3.seeedstudio.com/images/product/Grove%20Tem%20Hum%20Accuracy%20Mini.jpg width=300><img src=https://statics3.seeedstudio.com/product/Grove%20Tem%20Hum%20Accuracy%20Mini_02.jpg width=300>
+
+
+[Grove - Temperature&Humidity Sensor (High-Accuracy & Mini)](https://www.seeedstudio.com/Grove-Temperature%26Humidity-Sensor-%28High-Accuracy-%26-Mini%29-p-1921.html)
+
+This is a multifunctional sensor that gives you temperature and relative humidity information at the same time. It utilizes a TH02 sensor that can meet measurement needs of general purposes. It provides reliable readings when environment humidity condition inbetween 0-80% RH, and temperature condition inbetween 0-70°C, covering needs in most home and daily applications that don't contain extreme conditions.  
+
 #### Usage
     1.Git clone this resp to your arduino IDE's lib directory.
-	2.Open the demo "TH20_dev"
+	2.Open the demo "TH20_demo"
     
 ----
 
-This software is written by Oliver Wang (long.wang@seeedstudio.com) for seeed studio<br>
-and is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php). Check License.txt for more information.<br>
+This demo is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php). Check LINCESE for more information.<br>
 
+Contributing to this software is warmly welcomed. You can do this basically by<br>
+[forking](https://help.github.com/articles/fork-a-repo), committing modifications and then [pulling requests](https://help.github.com/articles/using-pull-requests) (follow the links above<br>
+for operating guide). Adding change log and your contact into file header is encouraged.<br>
+Thanks for your contribution.
 
 Seeed Studio is an open hardware facilitation company based in Shenzhen, China. <br>
 Benefiting from local manufacture power and convenient global logistic system, <br>
 we integrate resources to serve new era of innovation. Seeed also works with <br>
 global distributors and partners to push open hardware movement.<br>
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Seeed-Studio/mesh_bee/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-[![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/Mesh_Bee)](https://github.com/igrigorik/ga-beacon)
+[![Analytics](https://ga-beacon.appspot.com/UA-46589105-3/Grove_Temper_Humidity_TH02)](https://github.com/igrigorik/ga-beacon)
 
