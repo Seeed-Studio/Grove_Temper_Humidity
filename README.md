@@ -1,4 +1,4 @@
-### Grove Temper Humidity TH02
+### Grove Temper Humidity TH02  [![Build Status](https://travis-ci.com/Seeed-Studio/Grove_Temper_Humidity_TH02.svg?branch=master)](https://travis-ci.com/Seeed-Studio/Grove_Temper_Humidity_TH02)
 ------------
 
 <img src=https://statics3.seeedstudio.com/images/product/Grove%20Tem%20Hum%20Accuracy%20Mini.jpg width=300><img src=https://statics3.seeedstudio.com/product/Grove%20Tem%20Hum%20Accuracy%20Mini_02.jpg width=300>
