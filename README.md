@@ -1,4 +1,4 @@
-### Grove Temper Humidity TH02  [![Build Status](https://travis-ci.com/Seeed-Studio/Grove_Temper_Humidity_TH02.svg?branch=master)](https://travis-ci.com/Seeed-Studio/Grove_Temper_Humidity_TH02)
+### Grove Temper Humidity TH02 & TH06  [![Build Status](https://travis-ci.com/Seeed-Studio/Grove_Temper_Humidity_TH02.svg?branch=master)](https://travis-ci.com/Seeed-Studio/Grove_Temper_Humidity_TH02)
 ------------
 
 <img src=https://statics3.seeedstudio.com/images/product/Grove%20Tem%20Hum%20Accuracy%20Mini.jpg width=300><img src=https://statics3.seeedstudio.com/product/Grove%20Tem%20Hum%20Accuracy%20Mini_02.jpg width=300>
@@ -13,6 +13,12 @@ This is a multifunctional sensor that gives you temperature and relative humidit
 	2.Open the demo "TH20_demo"
     
 ----
+
+This is a multifunctional sensor that gives you temperature and relative humidity information at the same time. It utilizes a TH06 sensor that can meet measurement needs of general purposes. It provides reliable readings when environment humidity condition inbetween 0-80% RH, and temperature condition inbetween -10-85°C, covering needs in most home and daily applications that don't contain extreme conditions.
+
+#### Usage
+    1.Git clone this resp to your arduino IDE's lib directory.
+        2.Open the demo "TH06_demo"
 
 This demo is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php). Check LINCESE for more information.<br>
 
