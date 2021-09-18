@@ -18,7 +18,7 @@ This is a multifunctional sensor that gives you temperature and relative humidit
 
 #### Usage
     1.Git clone this resp to your arduino IDE's lib directory.
-        2.Open the demo "TH06_demo"
+    2.Open the demo "TH06_demo"
 
 This demo is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php). Check LINCESE for more information.<br>
 
