@@ -60,17 +60,17 @@
 class TH02_dev : public TempHumi{
 public:	
 
-	void begin();
-	uint8_t isAvailable();
+    void begin();
+    uint8_t isAvailable();
     float ReadTemperature(void);
     float ReadHumidity(void);
 	
     void IIC_WriteCmd(uint8_t u8Cmd);
-	uint8_t IIC_ReadReg(uint8_t u8Reg);
+    uint8_t IIC_ReadReg(uint8_t u8Reg);
     void IIC_WriteReg(uint8_t u8Reg, uint8_t u8Data);
     
-	uint16_t IIC_ReadData(uint8_t u8Reg,uint8_t num);
-	uint16_t IIC_ReadData2byte(uint8_t u8Reg,uint8_t num);	
+    uint16_t IIC_ReadData(uint8_t u8Reg,uint8_t num);
+    uint16_t IIC_ReadData2byte(uint8_t u8Reg,uint8_t num);	
 };
 extern TH02_dev TH02;
 
