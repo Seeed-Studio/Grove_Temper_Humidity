@@ -34,34 +34,23 @@
 /***        Include files                                                 ***/
 /****************************************************************************/
 #include "TH06_dev.h"
-#include <arduino.h>
+#include <Arduino.h>
 #include <Wire.h>
-/* Use Serial IIC */
-#ifdef SERIAL_IIC
-#endif
+
 
 TH06_dev TH06;
-/****************************************************************************/
-/***       Local Variable                                                 ***/
-/****************************************************************************/
 
-
-/****************************************************************************/
-/***       Class member Functions                                         ***/
-/****************************************************************************/
-
-void TH06_dev::begin(void) {
+void TH06_dev::begin() {
 	/* Start IIC */
-    Wire.begin();
-    /* TH02 don't need to software reset */
+      TempHumi::begin(TH06_I2C_DEV_ID);
+    /* TH06 don't need to software reset */
 }
 
 /* Read TH06's Temperature */
 float TH06_dev::ReadTemperature(void)
 {
  /*  */
- float Temp_Code = TH06_IIC_ReadData2byte(TH06_Temp_Hold_Master_Mode);
-
+ float Temp_Code = IIC_ReadData2byte(TH06_Temp_Hold_Master_Mode,2);
  /*
 		Formula:
         Temperature(C) = (175.2*Temp_Code)/65536 - 46.85
@@ -75,7 +64,7 @@ float TH06_dev::ReadTemperature(void)
 /* Read TH06's Humidity*/
 float TH06_dev::ReadHumidity(void)
 {
-  float  RH_Code = TH06_IIC_ReadData2byte(TH06_Humi_Hold_Master_Mode);
+  float  RH_Code = IIC_ReadData2byte(TH06_Humi_Hold_Master_Mode,2);
   
   /*
 		Formula:
@@ -87,38 +76,13 @@ float TH06_dev::ReadHumidity(void)
 }
 
 
-void TH06_dev::TH06_IIC_WriteCmd(uint8_t u8Cmd)
+void TH06_dev::IIC_WriteCmd(uint8_t u8Cmd)
 {
-	/* Port to arduino */
-    Wire.beginTransmission(TH06_I2C_DEV_ID);
-    Wire.write(u8Cmd);
-    int error = Wire.endTransmission();
-	
-	/* if return error print error's value */
-    if (error !=0)
-    {
-      Serial.print("error's value: ");
-      Serial.println(error);
-    }
+	TempHumi::IIC_WriteCmd(u8Cmd);
 }
 
-uint16_t TH06_dev::TH06_IIC_ReadData2byte(uint8_t u8Reg)
+uint16_t TH06_dev::IIC_ReadData2byte(uint8_t u8Reg,uint8_t num)
 {
-    uint16_t TempData = 0;
-    uint16_t tmpArray[2] = {0};
-
-    int cnt = 0;
-    
-    TH06_IIC_WriteCmd(u8Reg);
-    
-    Wire.requestFrom(TH06_I2C_DEV_ID, 2);
-    while (Wire.available()) 
-    {
-        tmpArray[cnt] = Wire.read();
-        cnt++;
-    }
- 
-    TempData = (tmpArray[0] << 8) | (tmpArray[1]);
-    return TempData;
-
+    return TempHumi::IIC_ReadData2byte(u8Reg,num);
 }
+
