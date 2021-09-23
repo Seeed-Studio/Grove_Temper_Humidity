@@ -35,6 +35,8 @@
 /****************************************************************************/
 /***        Including Files                                               ***/
 /****************************************************************************/
+#include "THSensor_base.h"
+
 #include <Wire.h>
 #include <Arduino.h>
 
@@ -54,15 +56,15 @@
 /****************************************************************************/
 /***        Class Definition                                              ***/
 /****************************************************************************/
-class TH06_dev {
+class TH06_dev : public TempHumi {
 	public:
 		void begin();
 		float ReadTemperature(void);
 		float ReadHumidity(void);
-	private:
-		void TH06_IIC_WriteCmd(uint8_t u8Cmd);
-		uint16_t TH06_IIC_ReadData2byte(uint8_t u8Reg);
+		
+		void IIC_WriteCmd(uint8_t u8Cmd);
+		uint16_t IIC_ReadData2byte(uint8_t u8Reg,uint8_t num);
 };
-extern TH06_dev TH06;
 
+extern TH06_dev TH06;
 #endif 
