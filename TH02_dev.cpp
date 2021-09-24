@@ -37,8 +37,6 @@
 #include <Arduino.h>
 
 
-TH02_dev TH02;
-
 void TH02_dev::begin(void) {
     /* Start IIC */
     //Wire.begin();
