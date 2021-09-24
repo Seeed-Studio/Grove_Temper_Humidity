@@ -9,6 +9,8 @@
 #include "Arduino.h"
 #include "Wire.h"
 
+TH02_dev TH02;
+
 void setup() {
     Serial.begin(9600);        // start serial for output
 
