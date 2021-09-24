@@ -1,7 +1,4 @@
 #include "THsensor_base.h"
-
-#include "TH02_dev.h"
-#include "TH06_dev.h"
 #include <Arduino.h>
 #include <Wire.h>
 
