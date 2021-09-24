@@ -37,9 +37,6 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-
-TH06_dev TH06;
-
 void TH06_dev::begin() {
 	/* Start IIC */
       TempHumi::begin(TH06_I2C_DEV_ID);
