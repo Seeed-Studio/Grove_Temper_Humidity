@@ -66,5 +66,4 @@ class TH06_dev : public TempHumi {
 		uint16_t IIC_ReadData2byte(uint8_t u8Reg,uint8_t num);
 };
 
-extern TH06_dev TH06;
 #endif 
