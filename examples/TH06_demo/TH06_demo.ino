@@ -9,18 +9,14 @@
 #include "Arduino.h"
 #include "Wire.h"
 
+TH06_dev TH06;
+
 void setup() {
     Serial.begin(9600);        // start serial for output
 
     Serial.println("****TH06_dev demo by seeed studio****\n");
-    /* Power up,delay 150ms,until voltage is stable */
-    delay(150);
     /* Reset HP20x_dev */
     TH06.begin();
-    delay(100);
-
-    /* Determine TH02_dev is available or not */
-    Serial.println("TH06_dev is available.\n");
 
 }
 
