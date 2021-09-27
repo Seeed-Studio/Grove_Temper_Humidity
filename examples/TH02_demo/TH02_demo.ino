@@ -8,11 +8,34 @@
 #include <TH02_dev.h>
 #include "Arduino.h"
 #include "Wire.h"
+#include "THSensor_base.h"
+
+#define ShowSerial Serial
+#ifdef __AVR__
+    #include <SoftwareSerial.h>
+    SoftwareSerial SSerial(2, 3); // RX, TX
+    #define COMSerial Serial
+    #define ShowSerial Serial
+    TH02_dev TH02;
+#endif
+
+#ifdef ARDUINO_SAMD_VARIANT_COMPLIANCE
+    #define COMSerial Serial1
+    #define ShowSerial SerialUSB
+    TH02_dev TH02;
+#endif
+
+#ifdef ARDUINO_ARCH_STM32F4
+    #define COMSerial Serial
+    #define ShowSerial SerialUSB
+    TH02_dev TH02;
+#endif
+
 
 void setup() {
-    Serial.begin(9600);        // start serial for output
+    ShowSerial.begin(9600);        // start serial for output
 
-    Serial.println("****TH02_dev demo by seeed studio****\n");
+    ShowSerial.println("****TH02_dev demo by seeed studio****\n");
     /* Power up,delay 150ms,until voltage is stable */
     delay(150);
     /* Reset HP20x_dev */
@@ -20,19 +43,20 @@ void setup() {
     delay(100);
 
     /* Determine TH02_dev is available or not */
-    Serial.println("TH02_dev is available.\n");
+    ShowSerial.println("TH02_dev is available.\n");
 }
 
 
 void loop() {
     float temper = TH02.ReadTemperature();
-    Serial.println("Temperature: ");
-    Serial.print(temper);
-    Serial.println("C\r\n");
+    ShowSerial.print("Temperature: ");
+    ShowSerial.print(temper);
+    ShowSerial.println("C\r\n");
+    //Serial.print("%\t");
 
     float humidity = TH02.ReadHumidity();
-    Serial.println("Humidity: ");
-    Serial.print(humidity);
-    Serial.println("%\r\n");
+    ShowSerial.print("Humidity: ");
+    ShowSerial.print(humidity);
+    ShowSerial.println("%\r\n");
     delay(1000);
 }

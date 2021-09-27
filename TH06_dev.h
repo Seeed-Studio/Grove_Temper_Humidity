@@ -1,5 +1,6 @@
+
 /*
-    TH02_dev.h
+    TH06_dev.h
     Driver for DIGITAL I2C HUMIDITY AND TEMPERATURE SENSOR
 
     Copyright (c) 2014 seeed technology inc.
@@ -28,9 +29,13 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
 */
-#ifndef _TH02_DEV_H
-#define _TH02_DEV_H
 
+#ifndef _TH06_DEV_H
+#define _TH06_DEV_H
+
+/****************************************************************************/
+/***        Including Files                                               ***/
+/****************************************************************************/
 
 #include <Wire.h>
 #include <Arduino.h>
@@ -39,38 +44,29 @@
 /****************************************************************************/
 /***        Macro Definitions                                             ***/
 /****************************************************************************/
-#define TH02_I2C_DEV_ID      0x40
-#define REG_STATUS           0x00
-#define REG_DATA_H           0x01
-#define REG_DATA_L           0x02
-#define REG_CONFIG           0x03
-#define REG_ID               0x11
+#define TH06_I2C_DEV_ID               0x40
+#define TH06_Humi_Hold_Master_Mode    0xE5
+#define TH06_Humi_No_Hold_Master_Mode 0xF5
+#define TH06_Temp_Hold_Master_Mode    0xE3
+#define TH06_Temp_No_Hold_Master_Mode 0xF3
+#define TH06_Reset                    0xFE
+#define TH06_WR_RH                    0xE6
+#define TH06_RD_RH                    0xE7
+#define TH06_RTV_from_PRM             0xE0 
 
-#define STATUS_RDY_MASK      0x01    //poll RDY,0 indicate the conversion is done
-
-#define CMD_MEASURE_HUMI     0x01    //perform a humility measurement
-#define CMD_MEASURE_TEMP     0x11    //perform a temperature measurement
-
-#define TH02_WR_REG_MODE      0xC0
-#define TH02_RD_REG_MODE      0x80
 /****************************************************************************/
 /***        Class Definition                                              ***/
 /****************************************************************************/
-
-class TH02_dev : public TempHumi{
-public:	
-
-    void begin();
-    uint8_t isAvailable();
-    float ReadTemperature(void);
-    float ReadHumidity(void);
+class TH06_dev : public TempHumi {
+	public:
 	
-    void IIC_WriteCmd(uint8_t u8Cmd);
-    uint8_t IIC_ReadReg(uint8_t u8Reg);
-    void IIC_WriteReg(uint8_t u8Reg, uint8_t u8Data);
-    
-    uint16_t IIC_ReadData(uint8_t u8Reg,uint8_t num);
-    uint16_t IIC_ReadData2byte(uint8_t u8Reg,uint8_t num);	
+		void begin();
+		float ReadTemperature(void);
+		float ReadHumidity(void);
+		
+		void IIC_WriteCmd(uint8_t u8Cmd);
+		
+		uint16_t IIC_ReadData2byte(uint8_t u8Reg,uint8_t num);
 };
 
 
