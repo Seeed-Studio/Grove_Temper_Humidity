@@ -34,7 +34,7 @@
 
 #include <Wire.h>
 #include <Arduino.h>
-#include "THsensor_base.h"
+#include "THSensor_base.h"
 
 /****************************************************************************/
 /***        Macro Definitions                                             ***/

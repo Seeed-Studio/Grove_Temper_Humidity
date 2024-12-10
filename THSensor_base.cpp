@@ -1,4 +1,4 @@
-#include "THsensor_base.h"
+#include "THSensor_base.h"
 
 #include <Arduino.h>
 #include <Wire.h>
