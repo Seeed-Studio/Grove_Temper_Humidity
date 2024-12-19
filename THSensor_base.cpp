@@ -1,4 +1,4 @@
-#include "THsensor_base.h"
+#include "THSensor_base.h"
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -13,10 +13,12 @@ void TempHumi::begin(uint8_t u8Reg) {
 
 float TempHumi::ReadTemperature(void) {
 //TO BE DEFINED IN HARDWARE CHILD CLASS
+    return 0;
 }
 
 float TempHumi::ReadHumidity(void) {
 //TO BE DEFINED IN HARDWARE CHILD CLASS  
+    return 0;
 }
 
 /****************************************************************************/
@@ -24,6 +26,7 @@ float TempHumi::ReadHumidity(void) {
 /****************************************************************************/
 uint8_t TempHumi::isAvailable() {
     //TO BE DEFINED IN HARDWARE CHILD CLASS
+    return 0;
 }
 
 
@@ -37,6 +40,7 @@ void TempHumi::IIC_WriteCmd(uint8_t u8Cmd) {
 /*num=1*/
 uint8_t TempHumi::IIC_ReadReg(uint8_t u8Reg,uint8_t num) {
     //TO BE DEFINED IN HARDWARE CHILD CLASS
+    return 0;
 }
 
 
@@ -47,6 +51,7 @@ void TempHumi::IIC_WriteReg(uint8_t u8Reg, uint8_t u8Data) {
 
 uint16_t IIC_ReadData(void){
 	//TO BE DEFINED IN HARDWARE CHILD CLASS
+    return 0;
 }
 
 /**get data**/
@@ -67,7 +72,4 @@ uint16_t TempHumi::IIC_ReadData2byte(uint8_t u8Reg,uint8_t num){
  
     TempData = (tmpArray[num-2] << 8) | (tmpArray[num-1]);
     return TempData;
-	
-	
-	
 }

@@ -17,21 +17,19 @@
     SoftwareSerial SSerial(2, 3); // RX, TX
     #define COMSerial Serial
     #define ShowSerial Serial
-    TH06_dev TH06;
 #endif
 
 #ifdef ARDUINO_SAMD_VARIANT_COMPLIANCE
 #define COMSerial Serial1
-#define ShowSerial SerialUSB
-TH06_dev TH06;
+#define ShowSerial Serial
 #endif
 
 #ifdef ARDUINO_ARCH_STM32F4
 #define COMSerial Serial
 #define ShowSerial SerialUSB
-TH06_dev TH06;
 #endif
 
+TH06_dev TH06;
 
 void setup() {
   ShowSerial.begin(9600);        // start serial for output
